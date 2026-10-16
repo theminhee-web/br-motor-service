@@ -49,14 +49,15 @@ header .wrap{display:flex;align-items:center;justify-content:space-between;gap:1
 .call{flex:none;background:var(--brand);color:var(--on-brand);font-weight:700;text-decoration:none;padding:9px 16px;border-radius:5px;font-size:.9rem;white-space:nowrap}
 
 /* hero */
-.hero{padding-block:36px 0;max-width:640px}
-.hero-photo{position:relative;border-radius:16px;overflow:hidden;aspect-ratio:4/3;background:var(--panel)}
-.hero-photo img{width:100%;height:100%;object-fit:cover;display:block}
-.hero-photo .cap{position:absolute;left:14px;bottom:14px;background:var(--brand);color:var(--on-brand);font-family:var(--f-mono);font-size:.74rem;padding:5px 10px;border-radius:5px;letter-spacing:.03em}
-.badge{display:inline-flex;align-items:center;gap:7px;font-family:var(--f-mono);font-weight:600;font-size:.75rem;letter-spacing:.06em;color:var(--brand);border:1px solid var(--brand);padding:5px 11px;border-radius:20px}
-h1{font-family:var(--f-display);font-weight:800;font-size:clamp(1.6rem,4.4vw,2.7rem);line-height:1.55;margin:18px 0 14px;text-wrap:balance}
-h1 em{font-style:normal;color:var(--brand)}
-.lead{max-width:36em;color:var(--muted);font-size:1.06rem;margin:0}
+.hero{position:relative;background:#0a0e1c url('images/sign-night2.png') center/cover no-repeat}
+.hero::before{content:'';position:absolute;inset:0;background:linear-gradient(180deg,rgba(8,11,22,.8),rgba(8,11,22,.62))}
+.hero-inner{position:relative;z-index:1;padding-block:64px 56px}
+.hero-copy{max-width:640px}
+.badge{display:inline-flex;align-items:center;gap:7px;font-family:var(--f-mono);font-weight:600;font-size:.75rem;letter-spacing:.06em;color:#fff;border:1px solid rgba(255,255,255,.55);padding:5px 11px;border-radius:20px}
+h1{font-family:var(--f-display);font-weight:800;font-size:clamp(1.6rem,4.4vw,2.7rem);line-height:1.55;margin:18px 0 14px;text-wrap:balance;color:#fff}
+h1 em{font-style:normal;color:var(--highlight)}
+.lead{max-width:36em;color:rgba(255,255,255,.82);font-size:1.06rem;margin:0}
+.hero .btn.ghost{color:#fff;border-color:rgba(255,255,255,.6)}
 .cta{display:flex;flex-wrap:wrap;gap:10px;margin-top:26px}
 .btn{display:inline-flex;align-items:center;gap:8px;padding:13px 20px;border-radius:6px;font-weight:700;text-decoration:none;border:2px solid var(--brand)}
 .btn.primary{background:var(--brand);color:var(--on-brand)}
@@ -133,21 +134,23 @@ footer .reg{font-family:var(--f-mono);font-size:.8rem}
 </div></header>
 
 <main id="top">
-  <div class="wrap hero">
-    <div>
-      <span class="badge">국토교통부 지정 자동차종합정비업 (1급)</span>
-      <h1>여러분의 소중한 차,<br><em>보령자동차공업사</em>에서 검사에서 수리까지 한 번에</h1>
-      <p class="lead">판금·도장부터 엔진·하체 정비, 정기검사까지 한 곳에서. 보험 접수부터 출고까지 직접 챙기니, 차는 맡기고 일상으로 돌아가세요.</p>
-      <div class="cta">
-        <a class="btn ghost" href="#services">정비 항목 보기</a>
-        <a class="btn primary" href="#visit">전화 상담 · 오시는 길</a>
+  <div class="hero">
+    <div class="wrap hero-inner">
+      <div class="hero-copy">
+        <span class="badge">국토교통부 지정 자동차종합정비업 (1급)</span>
+        <h1>여러분의 소중한 차,<br><em>보령자동차공업사</em>에서<br>검사에서 수리까지 한 번에</h1>
+        <p class="lead">판금·도장부터 엔진·하체 정비, 정기검사까지 한 곳에서. 보험 접수부터 출고까지 직접 챙기니, 차는 맡기고 일상으로 돌아가세요.</p>
+        <div class="cta">
+          <a class="btn ghost" href="#services">정비 항목 보기</a>
+          <a class="btn primary" href="#visit">전화 상담 · 오시는 길</a>
+        </div>
       </div>
     </div>
   </div>
 
   <section id="services"><div class="wrap">
     <div class="eyebrow">정비 항목</div>
-    <p class="sub">1급 정비업체라 차체·도장부터 소모품 교환까지 한 곳에서 해결됩니다.</p>
+    <p class="sub">1급 정비업체는 차체·구조 수리와 도장까지 법적으로 할 수 있습니다. 큰 사고부터 소모품 교환, 정기검사까지 다른 곳으로 옮길 필요가 없습니다.</p>
     <div class="svc-grid">
       <details class="svc" open>
         <summary><span class="dot"></span>정기검사 · 종합검사<span class="plus">＋</span></summary>
@@ -212,11 +215,12 @@ footer .reg{font-family:var(--f-mono);font-size:.8rem}
         <img src="images/hero.png" alt="보령자동차공업사 매장 전경">
         <span class="cap">충남 보령시 중앙로 33</span>
       </div>
+      <div class="visit-photo">
+        <img src="images/sign-night.jpg" alt="보령자동차공업사 간판">
+      </div>
       <div class="mapsketch" style="padding:0;overflow:hidden;position:relative">
         <img src="images/map.png" alt="보령자동차공업사 약도" style="width:100%;height:auto;display:block">
-        <span style="position:absolute;left:48%;top:79%;transform:translate(-50%,-50%);background:linear-gradient(90deg,#ffd6d6,#ffe8c2,#fff6b8,#d7f5d0,#c9e8f7,#dcd3f5);color:var(--brand);font-family:var(--f-body);font-weight:600;font-size:.62rem;padding:2px 6px;border-radius:3px;border:1px solid var(--brand);white-space:nowrap;box-shadow:0 1px 3px rgba(0,0,0,.18)">무지개다리</span>
-        <span style="position:absolute;left:23%;top:52%;transform:translate(0,-50%);background:var(--brand);color:var(--on-brand);font-family:var(--f-display);font-weight:800;font-size:.78rem;padding:2px 5px;border-radius:3px;border:1px solid var(--brand);white-space:nowrap;box-shadow:0 1px 4px rgba(0,0,0,.25)">보령자동차공업사</span>
-      </div>
+        <span style="position:absolute;left:48%;top:74%;transform:translate(-50%,-50%);background:#fff;color:var(--brand);font-family:var(--f-body);font-weight:600;font-size:.62rem;padding:2px 6px;border-radius:3px;white-space:nowrap;box-shadow:0 1px 3px rgba(0,0,0,.18)">동대교</span>      </div>
     </div>
     <div class="visit-card">
       <div class="visit-top">
@@ -234,8 +238,7 @@ footer .reg{font-family:var(--f-mono);font-size:.8rem}
             <dt>평일</dt><dd>09:00–12:00<br>12:00–13:00 점심시간<br>13:00–18:00</dd>
             <dt>토요일</dt><dd>09:00 – 12:00</dd>
             <dt>일·공휴일</dt><dd>휴무</dd>
-            <dt>주차</dt><dd>공업사 내 고객 주차 가능</dd>
-            <dt>혜택</dt><dd>보령상품권 사용 가능 · 다자녀가구 우대(할인)</dd>
+            <dt>혜택</dt><dd>보령상품권 사용 가능 · 다자녀가구 우대</dd>
           </dl>
         </div>
       </div>
