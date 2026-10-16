@@ -49,8 +49,7 @@ header .wrap{display:flex;align-items:center;justify-content:space-between;gap:1
 .call{flex:none;background:var(--brand);color:var(--on-brand);font-weight:700;text-decoration:none;padding:9px 16px;border-radius:5px;font-size:.9rem;white-space:nowrap}
 
 /* hero */
-.hero{padding-block:36px 0;display:grid;grid-template-columns:1.1fr 1fr;gap:34px;align-items:center}
-@media(max-width:760px){.hero{grid-template-columns:1fr}}
+.hero{padding-block:36px 0;max-width:640px}
 .hero-photo{position:relative;border-radius:16px;overflow:hidden;aspect-ratio:4/3;background:var(--panel)}
 .hero-photo img{width:100%;height:100%;object-fit:cover;display:block}
 .hero-photo .cap{position:absolute;left:14px;bottom:14px;background:var(--brand);color:var(--on-brand);font-family:var(--f-mono);font-size:.74rem;padding:5px 10px;border-radius:5px;letter-spacing:.03em}
@@ -96,7 +95,11 @@ h2{font-family:var(--f-display);font-weight:800;font-size:clamp(1.5rem,3.6vw,2re
 .why p{margin:0;color:var(--muted)}
 
 /* 약도 */
-.mapsketch{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:18px 18px 10px;margin-bottom:18px}
+.visit-media{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px;margin-bottom:18px}
+.visit-photo{position:relative;border-radius:14px;overflow:hidden;aspect-ratio:4/3;background:var(--panel)}
+.visit-photo img{width:100%;height:100%;object-fit:cover;display:block}
+.visit-photo .cap{position:absolute;left:12px;bottom:12px;background:var(--brand);color:var(--on-brand);font-family:var(--f-mono);font-size:.7rem;padding:4px 9px;border-radius:5px;letter-spacing:.03em}
+.mapsketch{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:18px 18px 10px;margin-bottom:0}
 .mapsketch svg{width:100%;height:auto;display:block}
 .mapsketch .mlabel{font-family:var(--f-mono);font-size:11px;fill:var(--muted)}
 .mapsketch .mname{font-family:var(--f-body);font-weight:700;font-size:13px;fill:var(--ink)}
@@ -140,15 +143,11 @@ footer .reg{font-family:var(--f-mono);font-size:.8rem}
         <a class="btn primary" href="#visit">전화 상담 · 오시는 길</a>
       </div>
     </div>
-    <div class="hero-photo">
-      <img src="images/hero.png" alt="보령자동차공업사 매장 전경">
-      <span class="cap">충남 보령시 중앙로 33</span>
-    </div>
   </div>
 
   <section id="services"><div class="wrap">
-    <div class="eyebrow">정비 품목</div>
-    <p class="sub">1급 정비업체는 차체·구조 수리와 도장까지 법적으로 할 수 있습니다. 큰 사고부터 소모품 교환, 정기검사까지 다른 곳으로 옮길 필요가 없습니다.</p>
+    <div class="eyebrow">정비 항목</div>
+    <p class="sub">1급 정비업체라 차체·도장부터 소모품 교환까지 한 곳에서 해결됩니다.</p>
     <div class="svc-grid">
       <details class="svc" open>
         <summary><span class="dot"></span>정기검사 · 종합검사<span class="plus">＋</span></summary>
@@ -208,10 +207,16 @@ footer .reg{font-family:var(--f-mono);font-size:.8rem}
 
   <section id="visit"><div class="wrap">
     <div class="eyebrow">전화·오시는 길</div>
-    <div class="mapsketch" style="padding:0;overflow:hidden;position:relative">
-      <img src="images/map.png" alt="보령자동차공업사 약도" style="width:100%;height:auto;display:block">
-      <span style="position:absolute;left:48%;top:79%;transform:translate(-50%,-50%);background:linear-gradient(90deg,#ffd6d6,#ffe8c2,#fff6b8,#d7f5d0,#c9e8f7,#dcd3f5);color:var(--brand);font-family:var(--f-body);font-weight:600;font-size:.62rem;padding:2px 6px;border-radius:3px;border:1px solid var(--brand);white-space:nowrap;box-shadow:0 1px 3px rgba(0,0,0,.18)">무지개다리</span>
-      <span style="position:absolute;left:23%;top:52%;transform:translate(0,-50%);background:var(--brand);color:var(--on-brand);font-family:var(--f-display);font-weight:800;font-size:.78rem;padding:2px 5px;border-radius:3px;border:1px solid var(--brand);white-space:nowrap;box-shadow:0 1px 4px rgba(0,0,0,.25)">보령자동차공업사</span>
+    <div class="visit-media">
+      <div class="visit-photo">
+        <img src="images/hero.png" alt="보령자동차공업사 매장 전경">
+        <span class="cap">충남 보령시 중앙로 33</span>
+      </div>
+      <div class="mapsketch" style="padding:0;overflow:hidden;position:relative">
+        <img src="images/map.png" alt="보령자동차공업사 약도" style="width:100%;height:auto;display:block">
+        <span style="position:absolute;left:48%;top:79%;transform:translate(-50%,-50%);background:linear-gradient(90deg,#ffd6d6,#ffe8c2,#fff6b8,#d7f5d0,#c9e8f7,#dcd3f5);color:var(--brand);font-family:var(--f-body);font-weight:600;font-size:.62rem;padding:2px 6px;border-radius:3px;border:1px solid var(--brand);white-space:nowrap;box-shadow:0 1px 3px rgba(0,0,0,.18)">무지개다리</span>
+        <span style="position:absolute;left:23%;top:52%;transform:translate(0,-50%);background:var(--brand);color:var(--on-brand);font-family:var(--f-display);font-weight:800;font-size:.78rem;padding:2px 5px;border-radius:3px;border:1px solid var(--brand);white-space:nowrap;box-shadow:0 1px 4px rgba(0,0,0,.25)">보령자동차공업사</span>
+      </div>
     </div>
     <div class="visit-card">
       <div class="visit-top">
