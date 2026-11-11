@@ -118,8 +118,11 @@ dl{margin:0;display:grid;grid-template-columns:auto 1fr;gap:10px 18px}
 dt{color:var(--muted);font-size:.88rem}
 dd{margin:0;font-weight:500;font-variant-numeric:tabular-nums}
 .visit-bottom{background:var(--brand);color:var(--on-brand);padding:14px 20px;font-family:var(--f-mono);font-weight:700;font-size:.78rem;letter-spacing:.01em;display:flex;flex-wrap:wrap;justify-content:center;gap:6px 12px}
-.top-bar{background:var(--brand);color:var(--on-brand);padding:14px 20px;font-family:var(--f-mono);font-weight:700;font-size:1.3rem;letter-spacing:.03em;display:flex;flex-wrap:wrap;justify-content:center;gap:6px 16px;text-align:center}
-@media (max-width:480px){.top-bar{font-size:1.02rem;padding:12px 16px}}
+.top-bar{background:var(--brand);color:var(--on-brand);padding:18px 20px;font-family:var(--f-mono);font-weight:700;font-size:1.75rem;letter-spacing:.04em;display:flex;flex-wrap:wrap;justify-content:center;gap:8px 18px;text-align:center}
+.top-bar .flash{text-shadow:0 0 14px rgba(255,230,0,.75),0 0 2px rgba(255,230,0,.9)}
+@media (prefers-reduced-motion:no-preference){.top-bar .flash{animation:flashPulse 1.8s ease-in-out infinite}}
+@keyframes flashPulse{0%,100%{opacity:1}50%{opacity:.55}}
+@media (max-width:480px){.top-bar{font-size:1.15rem;padding:14px 16px}}
 
 /* 겨울철 무상점검 프로모 */
 .promo-card{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:30px 28px}
@@ -139,7 +142,7 @@ footer .reg{font-family:var(--f-mono);font-size:.8rem}
 </head>
 <body>
 
-<div class="top-bar" style="gap:6px 20px"><span style="color:#ffe600;font-weight:900">❄</span><span style="color:#ffe600;font-weight:900">겨울철 대비 차량 무상점검 서비스</span><span style="color:#ffe600;font-weight:900">❄</span><span style="color:#ffe600;font-weight:900">문의 041 935 0070</span><span style="color:#ffe600;font-weight:900">❄</span></div>
+<div class="top-bar" style="gap:8px 22px"><span class="flash" style="color:#ffe600;font-weight:900">❄</span><span class="flash" style="color:#ffe600;font-weight:900">겨울철 대비 차량 무상점검 서비스</span><span class="flash" style="color:#ffe600;font-weight:900">❄</span><span class="flash" style="color:#ffe600;font-weight:900">문의 041 935 0070</span><span class="flash" style="color:#ffe600;font-weight:900">❄</span></div>
 <header><div class="wrap">
   <a class="brand" href="#top">
     <img class="mark" src="images/logo.jpg" alt="보령자동차공업사 로고">
